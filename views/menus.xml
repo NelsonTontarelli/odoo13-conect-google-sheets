@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <!-- Acción del Menú -->
+        <record id="action_googlesheet_sync" model="ir.actions.act_window">
+            <field name="name">Google Sheets Sync</field>
+            <field name="res_model">googlesheets.sync</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menú -->
+        <record id="menu_googlesheet_sync" model="ir.ui.menu">
+            <field name="name">Google Sheets Sync</field>
+            <field name="sequence" eval="10"/>
+            <field name="action" ref="action_googlesheet_sync"/>
+        </record>
+    </data>
+</odoo>

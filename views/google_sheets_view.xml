@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <!-- Vista Tree -->
+        <record id="googlesheets_tree_view" model="ir.ui.view">
+            <field name="name">GoogleSheets Sync Tree View</field>
+            <field name="model">googlesheets.sync</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="reference"/>
+                    <field name="name"/>
+                    <field name="sheet_name"/>
+                    <field name="active"/>
+                    <field name="description" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Form View -->
+        <record id="googlesheets_form_view" model="ir.ui.view">
+            <field name="name">GoogleSheets Sync Form View</field>
+            <field name="model">googlesheets.sync</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button type="object" name="SyncGoogleSheets" class="btn btn-primary" string="Sync"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="reference" placeholder="Referencia"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="sheet_name"/>
+                                <field name="model_id" options="{'no_create': True, 'no_edit': True, 'no_quick_create': True}"/>
+                            </group>
+                            <group>
+                                <field name="active"/>
+                                <field name="json"/>
+                            </group>
+                        </group>
+                        <field name="description" placeholder="Descripción..."/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
